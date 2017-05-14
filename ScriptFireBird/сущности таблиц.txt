@@ -1,0 +1,50 @@
+﻿--создание таблицы предметы
+create table SUBJECTS (
+    ID          integer primary key,
+    NAME_SUBJ   varchar(50),
+    COST        integer);
+commit;
+
+--создание таблицы группы
+create table GROUPS (
+    ID          integer primary key,
+    SPECIALTY   varchar(100),
+    FULLTIME    smallint);
+commit;
+
+--создание таблицы учебные годы
+create table ACADEMIC_YEARS (
+    ID          integer primary key,
+    ACADEMIC_YEAR integer);
+commit;
+
+--создание таблицы преподаватели
+create table TEACHERS (
+    ID          integer primary key,
+    LName	    VARCHAR(35),
+	FName 	    VARCHAR(35),
+	Sname	    VARCHAR(35),
+	POST        integer,
+	SCIENCE     integer,
+	WORK_EXPERIENCE integer);
+commit;
+
+--создание таблицы должности
+create table POST (
+    ID          integer primary key,
+    POST        VARCHAR(50));
+commit;
+
+--создание таблицы ученые степени
+create table SCIENCE (
+    ID          integer primary key,
+    NAME_SCI    VARCHAR(50));
+commit;
+
+--создание таблицы нагрузка
+create table LOAD (
+    ID_TEACHER  integer,
+    ID_SUBJ     integer,
+    ID_GROUP    integer,
+    ID_YEAR     integer);
+commit;

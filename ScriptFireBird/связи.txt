@@ -1,0 +1,29 @@
+﻿--Создание ограничений целостности для внешних ключей Subjects
+alter table LOAD add constraint FK_SUBJ foreign key (ID_SUBJ)
+references SUBJECTS (ID);
+commit;
+
+--Создание ограничений целостности для внешних ключей TEACHERS
+alter table LOAD add constraint FK_TEACHER foreign key (ID_TEACHER)
+references TEACHERS (ID);
+commit;
+
+--Создание ограничений целостности для внешних ключей GROUPS
+alter table LOAD add constraint FK_GROUP foreign key (ID_GROUP)
+references GROUPS (ID);
+commit;
+
+--Создание ограничений целостности для внешних ключей ACADEMIC_YEARS
+alter table LOAD add constraint FK_ACADEMIC foreign key (ID_YEAR)
+references ACADEMIC_YEARS (ID);
+commit;
+
+--Создание ограничений целостности для внешних ключей POST (переделать таблицу Teachers  ругается на варчар)
+alter table TEACHERS add constraint FK_POST foreign key (POST)
+references POST (ID);
+commit;
+
+--Создание ограничений целостности для внешних ключей SCIENCE
+alter table TEACHERS add constraint FK_SCIENCE foreign key (SCIENCE)
+references SCIENCE (ID);
+commit;
